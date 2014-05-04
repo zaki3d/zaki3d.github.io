@@ -58,6 +58,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d1f21', end
 .wrap {
 	min-width: 100%;
 	float: left;
-	margin-left: 14px;
-	padding: 172px 30px;
+	padding: 172px 0;
+	margin-left: 29px;
 }
