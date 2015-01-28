@@ -1,0 +1,86 @@
+body {
+	background: url('img/eames-pattern-pink.jpg');
+	-webkit-background-size: 360px;
+	-o-background-size: 360px;
+	background-size: 360px;
+	font-family: 'Vollkorn', serif;
+	font-style: italic;
+	font-size: 18px;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1 {
+	color: #FECBCA;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	font-size: 2.2em;
+	font-style: normal;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+p {
+	text-align: center;
+	color: #756B6E;
+	margin: 20px 0;
+}
+
+.card {
+	max-width: 620px;
+	background: #FFF;
+	padding: 30px;
+	margin: 5% auto 0;
+	border: 10px solid #Fddddd;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+.guest {
+	width: 400px;
+	margin: 40px auto 10px;
+	font-size: 16px;
+	border-top: 1.2px dotted #ddd;
+}
+
+.guest p {
+	color: #bbb;
+}
+
+.motif {
+	width: 160px;
+	margin: 0 auto;
+	opacity: 0.3;
+	display: block;
+}
+
+hr {
+	width: 20px;
+	border: 0;
+	background-color: #ddd;
+	height: 1px;
+	margin-top: 34px;
+	margin-bottom: 34px;
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 600px) {
+	.card {
+		width: 100%;
+	}
+	.guest {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	h1 {
+		font-size: 1.7em;
+	}
+}
