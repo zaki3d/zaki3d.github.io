@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="332px" height="771px" viewBox="0 0 332 771" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>decor</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="option-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="02-home-desktop" sketch:type="MSArtboardGroup" transform="translate(-49.000000, 0.000000)">
+            <g id="decor" sketch:type="MSLayerGroup" transform="translate(49.000000, -65.000000)">
+                <path d="M251,836 C270.882251,836 287,819.882251 287,800 C287,780.117749 270.882251,764 251,764 C231.117749,764 215,780.117749 215,800 C215,819.882251 231.117749,836 251,836 L251,836 Z M251,832 C233.326888,832 219,817.673112 219,800 C219,782.326888 233.326888,768 251,768 C268.673112,768 283,782.326888 283,800 C283,817.673112 268.673112,832 251,832 L251,832 Z" id="Shape" fill="#1A8CFF" sketch:type="MSShapeGroup"></path>
+                <rect id="Rectangle-32" fill="#F6C342" sketch:type="MSShapeGroup" transform="translate(106.000000, 602.000000) rotate(28.000000) translate(-106.000000, -602.000000) " x="28" y="524" width="156" height="156"></rect>
+                <path d="M239.744834,9.19648553 L318.744834,277.196486 L320.441319,282.951652 L331.951652,279.558681 L330.255166,273.803514 L251.255166,5.80351447 L249.558681,0.0483483695 L238.048348,3.44131943 L239.744834,9.19648553 L239.744834,9.19648553 Z" id="Shape" fill="#FF7E91" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
