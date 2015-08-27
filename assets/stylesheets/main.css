@@ -50,6 +50,10 @@ a:hover {
 }
 
 @media only screen and (max-width: 560px){
+  .decor {
+    left: 70px;
+    top: -644px;
+  }
   .container {
     left: 0;
   }
