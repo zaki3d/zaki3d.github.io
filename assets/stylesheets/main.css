@@ -52,7 +52,7 @@ a:hover {
 
 @media only screen and (max-width: 560px){
   .decor {
-    left: 40px;
+    right: 0;
     top: -644px;
   }
   .container {
