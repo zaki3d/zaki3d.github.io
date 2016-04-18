@@ -4,13 +4,13 @@ body {
   font-family: 'Asap', sans-serif;
   font-size: 18px;
   line-height: 1.8em;
-  color: #707070;
+  color: #333;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: #000;
+  color: #1a8cff;
   text-decoration: none;
 }
 
