@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/zaki3d
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://zakisalleh.com
+  * I am zaki3d (https://keybase.io/zaki3d) on keybase.
+  * I have a public key with fingerprint D0BB 3FD4 3371 CF44 3EAF  E892 F963 86A4 6FBD 1306
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101b0637076bc56a774ff180246b6b3d97a04931c3883888f8f5180b8dc71df16c20a",
+            "fingerprint": "d0bb3fd43371cf443eafe892f96386a46fbd1306",
+            "host": "keybase.io",
+            "key_id": "f96386a46fbd1306",
+            "kid": "0101b0637076bc56a774ff180246b6b3d97a04931c3883888f8f5180b8dc71df16c20a",
+            "uid": "56ba064e3aec851aee2b4d9306a31d19",
+            "username": "zaki3d"
+        },
+        "service": {
+            "hostname": "zakisalleh.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1470503388,
+    "expire_in": 157680000,
+    "prev": "4cd89c9b6296074917ea278aabf45504929179620f4a4b39659fe54d5fc42105",
+    "seqno": 10,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.55
+Comment: https://keybase.io/crypto
+
+yMImAnicrZJdSBVBFMevaYpWZh+SCVFtSWA3m92Znd29PURFZPZhgX2ZcZ3ZnfWu
+97p7u3e9ZlZm4UcEWRGY9WpfRD2YgfVUYln2EkRRIZYhRREKBUaZ0KwU9NBjw8Aw
+5/z/vznnML0zkn0ZSaHOc6tuHLtenPTkflu1b9fl+QN1AnWMWiFQJ4TZ5MEiBou7
+wbBlCAEBiECkAEMFKJjqMiaKgkxTVIGEMMUUGppCANKgqENV5Vs1VVPmaaoauiIa
+poh1CRDBL5iWXcFi0ZhluxxrAEqhaSAIFVE3EYKMmEzVJFPDUMUEYZMaIgSYG0NO
+3HPw4iiJswLL4TF+CU6W9w/9f667ehInY0oARgwSpquySBiTKDI0/iKBoiFqnjDO
+YjapYlx9kIQtaAiH/QKPJSydeWP1+vgrHyeRCAsV6E4V90ZjjuvoToTnQq4bDXhW
+tzbqaWsYDf6mBKllG3yM3JBgsbjl2EJA5ErdtTysiBQgA8ib8QvsQNSKsaDlKWQF
+q4Av7xmW4EikG6qmaxRLGgYK0kSFEUlRCaEmkmU+FYmHNCwBExFEoYZlzWQyMmRT
+R5IIZMHra7/tcDaHuqSCM+NWhU3c6hgTDvfcK0vxJWX4UqdO8f6XLyM968+ve52V
+NjF7RDiZf6nRVVpPgW4mb3595O4zcWKf0VU2aLfu/N7++XHuUMetyu521LH6W8pt
+Z2lda05D0gJ8cfHbTR+l7MjWpv7ugob+D1PG1jSPv1vUkrZrDctL39Z8uuaCsuxR
+as6Zn3mpRwcWjq53ujIXmfuL/J8SV5sA9v1oCLGtPYPrzrb4Y5ktnfPCLzcm3+87
+EbiyIC07MBKWHy5ZuKdm5fsdcOaXkqLM1jfl9Y3nn45u2vy8KDAr/gqem7rFleZ8
+fzE8a3nx3Fclvde+wmB92bebHZW5dnthfd/2rjtob+HYKXVFeelQf+Nu5pZf2DBt
+cenaB02hQ8eGx+8MRtrWHc9Pmf4LA6Q0+g==
+=m7Ik
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/zaki3d
+
+==================================================================
