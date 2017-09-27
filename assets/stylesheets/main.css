@@ -12,19 +12,33 @@ body {
 .container {
   width: 100%;
   max-width: 800px;
-  margin: 80px auto;
+  padding: 0 30px;
+  margin: 60px auto;
   box-sizing: border-box;
-  overflow: auto;
+  overflow: none;
+}
+
+.row {
+  display: block;
+  width: 100%;
 }
 
 .column {
-  width: calc(50% - 40px);
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
 }
 
+.full {
+  width: 100%;
+}
+
+.half {
+  width: calc(50% - 40px);
+}
+
 /* Visual elements */
+
 hr {
     height: 3px;
     color: #FCFAF8;
@@ -42,9 +56,41 @@ img {
   border-radius: 8px;
 }
 
+.circle {
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: middle;
+  }
+
+.blue {
+  background-color: #0057D8;
+}
+.navy {
+  background-color: #194AB1;
+}
+.green {
+  background-color: #95BF16;
+}
+.orange {
+  background-color: #C0580F;
+}
+.purple {
+  background-color: #7B63DA;
+}
+
 /* Typography */
 h1 {
   margin-bottom: 50px
+}
+
+h2 {
+  font-size: 18px;
+  color: #ABA197;
+  letter-spacing: 0;
+  font-weight: normal;
 }
 
 a {
@@ -58,9 +104,9 @@ a:hover {
   text-decoration: none;
   border-bottom: none;
   background: #F6F3F0;
-  border-radius: 3px;
-  padding: 0 2px;
-  margin: 0 -2px;
+  border-radius: 4px;
+  padding: 0 4px;
+  margin: 0 -4px;
 }
 
 .p {
@@ -75,10 +121,24 @@ a:hover {
   font-style: italic;
   color: #ABA197;
   font-size: 14px;
+  margin: 0;
 }
 
 .nomargin {
   margin-top: 0;
+}
+
+.detail {
+  font-size: 16px;
+  color: #ABA197;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-left: 6px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
 }
 
 /* Emoji override */
