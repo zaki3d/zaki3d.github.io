@@ -1,67 +1,103 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Asap', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 18px;
   line-height: 1.8em;
-  color: #333;
+  color: #1d1d1d;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
 }
 
-a {
-  color: #1a8cff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.decor {
-  position: absolute;
-  left: 5%;
-  z-index: 1;
-}
-
-.logo {
-  margin-bottom: 50px;
-}
-
 .container {
   width: 100%;
-  max-width: 960px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  margin: 0 auto;
+  max-width: 800px;
+  margin: 80px auto;
   box-sizing: border-box;
   overflow: auto;
 }
 
-.content {
-  position: relative;
-  right: 0;  
-  padding: 0 30px;
-  margin-top: 100px;
-  width: 560px;
+.column {
+  width: calc(50% - 40px);
   box-sizing: border-box;
-  float: right;
+  display: inline-block;
+  vertical-align: top;
 }
 
-@media only screen and (max-width: 560px){
-  .decor {
-    right: 0;
-    top: -644px;
+/* Visual elements */
+hr {
+    height: 3px;
+    color: #FCFAF8;
+    background: #FCFAF8;
+    font-size: 0;
+    border: 0;
+    margin: 30px 0;
+}
+
+.margin-right {
+  margin-right: 60px;
+}
+
+img {
+  border-radius: 8px;
+}
+
+/* Typography */
+h1 {
+  margin-bottom: 50px
+}
+
+a {
+  color: #1d1d1d;
+  text-decoration: none;
+  border-bottom: 2px solid #F6F3F0;
+  padding:
+}
+
+a:hover {
+  text-decoration: none;
+  border-bottom: none;
+  background: #F6F3F0;
+  border-radius: 3px;
+  padding: 0 2px;
+  margin: 0 -2px;
+}
+
+.p {
+  margin: 0 !important;
+}
+
+.column .p {
+  margin-top: 0 !important;
+}
+
+.caption {
+  font-style: italic;
+  color: #ABA197;
+  font-size: 14px;
+}
+
+.nomargin {
+  margin-top: 0;
+}
+
+/* Emoji override */
+.em {
+  height: 1.0em !important;
+  margin-top: -10px !important;
+}
+
+@media only screen and (max-width: 720px){
+  h1 {
+    padding: 0 30px;
   }
   .container {
     left: 0;
     right: 0;
   }
-  .content {
-    margin: 60px 0;
+  .column {
+    padding: 0 30px;
+    margin-bottom: 20px;
     width: 100%;
   }
 }
-
