@@ -26,6 +26,7 @@ body {
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
+  margin-bottom: 40px;
 }
 .full {
   width: 100%;
@@ -45,7 +46,6 @@ body {
 }
 .footer {
   display: flex;
-  padding-bottom: 20px;
 }
 .footer p {
   margin-right: 20px;
@@ -74,6 +74,13 @@ body {
   text-align: right;
   flex-grow: 1;
 }
+.row img {
+  width: 100%;
+}
+.hero {
+  width: 140% !important;
+  margin-left: -20%;
+}
 
 /* Visual elements */
 hr {
@@ -87,14 +94,26 @@ hr {
 img {
   border-radius: 8px;
 }
-.circle {
+.circle-sm {
 	border-radius: 50%;
 	width: 10px;
 	height: 10px;
   display: inline-block;
-  margin-right: 6px;
-  margin-bottom: 3px;
-  vertical-align: middle;
+  margin: 0 6px 1px 1px;
+  }
+.circle-md {
+	border-radius: 50%;
+	width: 16px;
+	height: 16px;
+  display: inline-block;
+  margin: 0 0 2px 6px;
+  }
+.circle-lg {
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+  display: inline-block;
+  margin: 0 0 1px 6px;
   }
 .blue {
   background-color: #0057D8;
@@ -105,11 +124,17 @@ img {
 .green {
   background-color: #95BF16;
 }
-.orange {
+.brown {
   background-color: #C0580F;
+}
+.orange {
+  background-color: #EC5A2E;
 }
 .purple {
   background-color: #7B63DA;
+}
+.red {
+  background-color: #DE1E33;
 }
 
 /* Typography */
@@ -140,6 +165,7 @@ a:hover {
   font-style: italic;
   color: #ABA197;
   font-size: 14px;
+  text-align: center;
   line-height: 1.8em;
   margin: 0;
 }
@@ -159,7 +185,9 @@ ul {
 }
 em {
   margin: 0 4px;
+  font-style: normal;
 }
+
 /* Emoji override */
 .em {
   height: 1.0em !important;
@@ -174,5 +202,9 @@ em {
   .column {
     margin-bottom: 20px;
     width: 100%;
+  }
+  .hero {
+    width: 100% !important;
+    margin: 0;
   }
 }
