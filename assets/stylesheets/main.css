@@ -187,6 +187,10 @@ em {
   margin: 0 4px;
   font-style: normal;
 }
+.quote {
+  font-size: 28px;
+  line-height: 1.5em;
+}
 
 /* Emoji override */
 .em {
