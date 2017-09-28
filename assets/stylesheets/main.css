@@ -9,6 +9,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Structural */
 .container {
   width: 100%;
   max-width: 800px;
@@ -17,28 +18,64 @@ body {
   box-sizing: border-box;
   overflow: none;
 }
-
 .row {
   display: block;
   width: 100%;
 }
-
 .column {
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
 }
-
 .full {
   width: 100%;
 }
-
 .half {
   width: calc(50% - 40px);
 }
 
-/* Visual elements */
+/* Layout */
+.margin-right {
+  margin-right: 60px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.footer {
+  display: flex;
+  padding-bottom: 20px;
+}
+.footer p {
+  margin-right: 20px;
+}
+.header h1 {
+  margin: 0 0 10px;
+}
+.header .detail {
+  margin: 0;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.title {
+  text-align: left;
+  flex-grow: 8;
+}
+.nav-prev {
+  text-align: left;
+  flex-grow: 1;
+}
+.nav-next {
+  text-align: right;
+  flex-grow: 1;
+}
 
+/* Visual elements */
 hr {
     height: 3px;
     color: #FCFAF8;
@@ -47,15 +84,9 @@ hr {
     border: 0;
     margin: 30px 0;
 }
-
-.margin-right {
-  margin-right: 60px;
-}
-
 img {
   border-radius: 8px;
 }
-
 .circle {
 	border-radius: 50%;
 	width: 10px;
@@ -65,7 +96,6 @@ img {
   margin-bottom: 3px;
   vertical-align: middle;
   }
-
 .blue {
   background-color: #0057D8;
 }
@@ -84,23 +114,20 @@ img {
 
 /* Typography */
 h1 {
-  margin-bottom: 50px
+  margin-bottom: 30px
 }
-
 h2 {
   font-size: 18px;
   color: #ABA197;
   letter-spacing: 0;
   font-weight: normal;
 }
-
 a {
   color: #1d1d1d;
   text-decoration: none;
   border-bottom: 2px solid #F6F3F0;
   padding:
 }
-
 a:hover {
   text-decoration: none;
   border-bottom: none;
@@ -109,26 +136,16 @@ a:hover {
   padding: 0 4px;
   margin: 0 -4px;
 }
-
-.p {
-  margin: 0 !important;
-}
-
-.column .p {
-  margin-top: 0 !important;
-}
-
 .caption {
   font-style: italic;
   color: #ABA197;
   font-size: 14px;
+  line-height: 1.8em;
   margin: 0;
 }
-
 .nomargin {
   margin-top: 0;
 }
-
 .detail {
   font-size: 16px;
   color: #ABA197;
@@ -136,12 +153,13 @@ a:hover {
   line-height: 24px;
   margin-left: 6px;
 }
-
 ul {
   list-style-type: none;
   padding-left: 0;
 }
-
+em {
+  margin: 0 4px;
+}
 /* Emoji override */
 .em {
   height: 1.0em !important;
