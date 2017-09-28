@@ -28,6 +28,9 @@ body {
   vertical-align: top;
   margin-bottom: 40px;
 }
+.column .column {
+  margin-bottom: 0;
+}
 .full {
   width: 100%;
 }
@@ -75,6 +78,9 @@ body {
   flex-grow: 1;
 }
 .row img {
+  width: 100%;
+}
+.column img {
   width: 100%;
 }
 .hero {
