@@ -199,6 +199,11 @@ em {
   font-size: 28px;
   line-height: 1.5em;
 }
+.aside {
+  background: #fcfaf8;
+  padding: 10px 30px;
+  border-radius: 8px;
+}
 
 /* Emoji override */
 .em {
