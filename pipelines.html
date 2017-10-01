@@ -31,7 +31,7 @@
   <div class="aside">
     <h2>The birth of Pipelines</h2>
     <p>
-      In late 2015, the Bamboo Cloud team pivoted from building what was essentially a hosted version of <a href="https://www.atlassian.com/software/bamboo" target="_blank">Bamboo Server</a> into what they believed was a better way forward — Bitbucket Pipelines. If you're familiar with Bamboo, you'd know how powerful and feature-packed it was as a build tool, but this came with a baggage. Setting up a build in Bamboo was complicated and hard to maintain. Teams were required to sign up for a different service to run their build, and this added unnecessary overhead for most cloud teams.
+      In late 2015, the Bamboo Cloud team pivoted from working on the hosted version of <a href="https://www.atlassian.com/software/bamboo" target="_blank">Bamboo Server</a> into what they believed was a better way forward — Bitbucket Pipelines. If you're familiar with Bamboo, you'd know how powerful and feature-packed it was as a build tool, but this came with a baggage. Setting up a build in Bamboo was complicated and hard to maintain. Teams were required to sign up for a different service to run their build, and this added unnecessary overhead for most cloud teams.
     </p>
     <p>
       Pipelines simplified that by using services like Docker as their build infrastructure, and storing your build configuration in a .yml file, which is committed and versioned with your code in your repository.
@@ -61,18 +61,21 @@
   <div class="column">
     <h2>Ship lean and iteratively</h2>
     <p class="nomargin">
-      When Pipelines was launched in mid-2016, we were missing a lot of the tablestakes features that <a href="https://wercker.com" target="_blank">other</a> <a href="https://codeship.com" target="_blank">build</a> <a href="http://www.circleci.com" target="_blank">tools</a> had at the time. In order to win users over, it was critical that users can easily set up a pipeline, or migrate an existing setup from other tools. Thus, onboarding became an important journey for us early on.
+      When Pipelines was launched in mid-2016, we were missing a lot of the tablestakes features that <a href="https://wercker.com" target="_blank">other</a> <a href="https://codeship.com" target="_blank">build</a> <a href="http://www.circleci.com" target="_blank">tools</a> had at the time. In order to win users over, it was critical that users can easily set up a pipeline, or migrate their existing setup from other tools. Thus, onboarding became an important journey for us early on.
     </p>
     <p>
-      As the only designer in the Pipelines team, I worked closely with the PM and front-end engineers on the design of our onboarding funnel. Each design candidate had a hypothesis, and were validated by running A/B tests. Aside from that, we also collected qualitative data via in-product survey, and running tests on <a href="http://usertesting.com" target="_blank">Usertesting.com</a>. These data helped us establish the key reasons for users drop off.
+      As a designer, I worked closely with the PMs and front-end engineers on the design of our onboarding funnel. Each design candidate gets hardened through sparring, and validated through A/B tests. We use analytics, in-product survey and tools like <a href="http://usertesting.com" target="_blank">Usertesting.com</a> to gather quantitative and qualitative data about each design, and inform our next iterations. With better understanding of why and where users drop-off in our funnel, we were able to improve the funnel and fix its technical implementation within a quarter, ultimately increasing the conversion from 6% to 15% — an increase of more than 200%!
     </p>
-    <p>
-      As a result, we were able to improve our conversion by about 200% (up 19% from 9%).
-    </p>
+    <img src="" alt="" /><!-- Show 5-step to 3-step onboarding evolution -->
+    <img src="" alt="" /><!-- Show editor improvements (yml guide) -->
   </div>
   <div class="column">
-    <h2>Delivering tablestakes</h2>
+    <h2>Checking off tablestakes</h2>
     <p class="nomargin">
+      After the beta launch, we still had a long way to go to reach feature parity with our competitors. The tablestakes features — usually specced out by the PMs — goes through an official kick-off in a meeting with design and engineering. These meetings were vital for defining the goal and scope of each feature, and set the direction for the team for that sprint.
+    </p>
+    <p>
+      Some features may go through a validation process, while others might get shipped and iterated later on to save time and deliver customer value.
     </p>
   </div>
   <div class="column">
