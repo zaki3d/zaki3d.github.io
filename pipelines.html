@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zaki Salleh - Bitbucket Pipelines</title>
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+  <link href='assets/stylesheets/main.css' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="title">
+      <h1>Bitbucket Pipelines <div class="circle-md blue"></div></h1>
+      <p class="detail">Research, UI, UX <em>•</em> 2015-17</p>
+    </div>
+  </div>
+  <hr />
+  <div class="column">
+    <img class="hero" src="assets/images/works/pipelines/pipelines-latest.jpg">
+  </div>
+  <div class="column">
+    <p class="quote">
+      Pipelines is a Bitbucket feature for development teams to continuously build, test and deploy their code.
+    </p>
+    <p>
+      Pipelines help small to medium-sized teams easily set up and maintain a Continuous Delivery workflow for their projects without having to worry about the build infrastructure. In this project, I worked with the PM, engineers, and designers to envision, deliver and iteratively improve on the product.
+    </p>
+  </div>
+  <div class="aside">
+    <h2>The birth of Pipelines</h2>
+    <p>
+      In late 2015, the Bamboo Cloud (now defunct) team pivoted to building what they believed was a better way forward — Bitbucket Pipelines. If you're familiar with Bamboo, you'd know how powerful and feature-packed it was as a build tool, but this came with a baggage. Setting up a build in Bamboo was complicated and hard to maintain. Teams were required to sign up for a different service to run their build, and this added unnecessary overhead for most cloud teams.
+    </p>
+    <p>
+      Pipelines simplified that by using services like Docker as their build infrastructure, and storing your build configuration in a .yml file, which is committed and versioned with your code in your repository.
+    </p>
+  </div>
+  <hr />
+  <!-- <div class="row">
+    <h2>Getting up to speed</h2>
+  </div>
+  <div class="column half margin-right">
+    <p class="nomargin">
+      With no prior Continuous Delivery (CD) knowledge, I had moved from the Confluence team to join Pipelines, just as they were starting to work on them. This was a personal challenge for me considering how technical the product was. I distinctly remember being intimidated learning git in my previous job, so the idea of designing a tool for developers was pretty terrifying. Alas, I took the challenge and soldiered on.
+    </p>
+  </div>
+  <div class="column half">
+    <img src="assets/images/works/pipelines/podcast-avatar.jpg">
+    <p class="caption">"To Be Continuous" — A crucial podcast that helped me learn Continuous Delivery</p>
+  </div>
+  <div class="column">
+    <p class="nomargin">
+      In the first two weeks, I shadowed the massively-talented <a href="https://twitter.com/jam_sbryant" target="_blank">James Bryant</a>, leaning on his experience with CD and Bamboo to learn the high-level concepts of code delivery. Then, I signed up for a new Bamboo account and attempted to run my first build with it. I documented this process, capturing blockers and pain points that I discovered as a new user. This document was shared back with the team as a way to understand new user's pain points of onboarding into Bamboo.
+    </p>
+    <p>
+      During my commute, I listened to the awesome "To Be Continuous" podcast by Heavybit, which discusses CD best practices and details the benefit of CD practices in today's technology teams.
+    </p>
+  </div> -->
+  <div class="column">
+    <h2>Continuous improvements</h2>
+    <div class="column half margin-right">
+      <p class="nomargin">
+        When Pipelines was launched in mid-2016, we were missing a lot of the tablestakes features that <a href="https://wercker.com" target="_blank">other</a> <a href="https://codeship.com" target="_blank">build</a> <a href="http://www.circleci.com" target="_blank">tools</a> had at the time. In order to win users over, it was critical that users can easily set up a pipeline, or migrate their existing setup from other tools. Thus, user onboarding became an important journey for us early on.
+      </p>
+    </div>
+    <div class="column half">
+      <img src="assets/images/works/pipelines/pipelines-onboard-2.jpg">
+      <p class="caption">
+        Early version of Pipelines' (previously 'Builds') onboarding was simple but confusing.
+      </p>
+    </div>
+    <p>
+      As a designer, I worked closely with the PMs and Front-end Engineers on the design of our onboarding funnel. Each design gets hardened through sparring, and validated through A/B tests. We use analytics, in-product survey and tools like <a href="http://usertesting.com" target="_blank">Usertesting.com</a> to gather quantitative and qualitative data about each design, and inform our next iterations. With better understanding of our funnel, we were able to improve the design within a quarter, ultimately increasing the conversion from ~6% to ~15% — an increase of more than 200%!
+    </p>
+  </div>
+  <div class="column">
+    <img src="assets/images/works/pipelines/pipelines-onboard-3.jpg">
+    <p class="caption">
+      One of the onboarding experiment where build results are analysed, and a fix is recommended based on the error.
+    </p>
+  </div>
+  <div class="column">
+    <img src="assets/images/works/pipelines/pipelines-onboard-4.jpg">
+    <p class="caption">
+      We used in-product survey to gather qualitative feedback and improve our funnel.
+    </p>
+  </div>
+  <div class="column full">
+    <iframe src="https://www.youtube.com/embed/dVo0j6NbTkE" frameborder="0" allowfullscreen></iframe>
+    <p class="caption">
+      An onboarding prototype done during ShipIt (Atlassian's quarterly hackathon), exploring a 1-click setup idea.
+    </p>
+  </div>
+  <div class="column">
+    <img src="assets/images/works/pipelines/pipelines-onboard-5.jpg">
+    <p class="caption">
+      The winning candidate — Significantly improved onboarding was achieved when we understood users' concern around pricing, supported languages and the setup complexity.
+    </p>
+  </div>
+  <div class="column">
+    <h2>Checking off tablestakes</h2>
+    <p class="nomargin">
+      After the beta launch, we were shipping features in 2 to 4 weeks cycles, in order to reach feature parity with our competitors. The features were usually specced out by the PMs, and kicked-off with Design and Engineering where we defined the goal and scope of each feature.
+    </p>
+    <img class="hero" src="assets/images/works/pipelines/pipelines-result-compare.jpg">
+    <p class="caption">
+      Evolution of Pipelines — From just a simple build log, to supporting end-to-end CD workflow with features like multiple steps and services, step duration, and test reporting.
+    </p>
+    <p>
+      Some features were tablestakes, and required little validation while others may go through testing similar to the aforementioned methods to gain confidence before shipping. Some features were shipped with known compromise in order to deliver customer value, and iterated later on.
+    </p>
+  </div>
+  <div class="column">
+    <h2>Onward and upward</h2>
+    <p class="nomargin">
+      Once we've shipped most of the tablestakes features, we were able to start looking into the next 6-12 months work. With the combined effort of a researcher, an additional designer and a PM, we begun a month-long research into our users' development workflow. We ran contextual enquiries and design sprints to explore our opportunities, narrow down our direction, and solidify our roadmap. We prototyped designs, and validated them through interviews and online testing and before agreeing on a direction and eventually breaking them down into stories for the engineers to work on.
+    </p>
+  </div>
+  <div class="column">
+    <img class="hero" src="assets/images/works/pipelines/pipelines-future-sprint.jpg">
+    <p class="caption">
+      Design, PM and Engineering get together in the design sprint to discuss problems and potential ideas.
+    </p>
+  </div>
+  <div class="column">
+    <img src="assets/images/works/pipelines/pipelines-future-test.jpg">
+    <p class="caption">
+      Ideas were prototyped and tested with remote users before getting implemented.
+    </p>
+  </div>
+  <hr />
+  <div class="footer">
+    <div class="nav-prev">
+      <a href="theco.html">← The Co.</a>
+    </div>
+    <div class="nav-next">
+      <a href="index.html">Home →</a>
+    </div>
+  </div>
+  <hr />
+  <div class="footer">
+    <p class="caption">©2017</p>
+    <p class="caption"><a href="mailto:&#122;&#097;&#107;&#105;&#051;&#100;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">Contact</a></p>
+  </div>
+</div>
+</body>
+</html>
