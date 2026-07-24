@@ -6,6 +6,7 @@
   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
   <link href='assets/stylesheets/main.css' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <meta charset="UTF-8">
 </head>
 <body>
@@ -13,9 +14,30 @@
   <h1>Hello, I'm Zaki <i class="em em-wave"></i></h1>
   <div class="row">
     <div class="column half margin-right">
-      <p class="nomargin">I'm a Product Designer at <a href="http://atlassian.com" target="_blank">Atlassian</a>, and I'm currently working on <a href="http://bitbucket.org" target="_blank">Bitbucket</a> to help developers manage and collaborate on code. Previously, I've worked on early-stage startups — from identity design and marketing, to UX and front-end — and helped them validate, build and launch to market.</p>
+      <p class="nomargin">I'm a Principal Product Designer at <a href="http://atlassian.com" target="_blank">Atlassian</a>. Previously, I've worked on early-stage startups — from identity design and marketing, to UX and front-end — and helped them validate, build and launch to market.</p>
 
       <p>Outside of work, I love going to art galleries and documenting my travels through <a href="http://instagram.com/zaki3d" target="_blank">sketches and photography</a>.</p>
+
+      <p>Get in touch with me via:</p>
+      <ul class="contact-list contact-list-js">
+        <li>
+          <a href="#" id="contact-email" rel="nofollow noopener">Email</a>
+        </li>
+        <li>
+          <a href="#" id="contact-instagram" target="_blank" rel="nofollow noopener noreferrer">Instagram</a>
+        </li>
+      </ul>
+      <noscript>
+        <style>.contact-list-js { display: none; }</style>
+        <ul class="contact-list">
+          <li>
+            <a href="mailto:&#122;&#097;&#107;&#105;&#051;&#100;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" rel="nofollow noopener">Email</a>
+          </li>
+          <li>
+            <a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#105;&#110;&#115;&#116;&#97;&#103;&#114;&#97;&#109;&#46;&#99;&#111;&#109;&#47;&#122;&#097;&#107;&#105;&#51;&#100;" target="_blank" rel="nofollow noopener noreferrer">Instagram</a>
+          </li>
+        </ul>
+      </noscript>
     </div>
     <div class="column half">
       <img src="assets/images/image-zaki.png" width="100%">
@@ -23,38 +45,30 @@
     </div>
   </div>
   <hr />
-  <div class="row">
-    <h2>Works</h2>
-    <ul>
-      <!-- <li>
-        <a href="bitbucket.html"><div class="circle-sm blue"></div> Bitbucket <span class="detail">Research, UI, UX <em>•</em> 2015-17</span></a>
-      </li> -->
-      <li>
-        <a href="pipelines.html"><div class="circle-sm blue"></div> Bitbucket Pipelines <span class="detail">Research, UI, UX <em>•</em> 2015-17</span></a>
-      </li>
-      <!-- <li>
-        <a href="#"><div class="circle-sm orange"></div> GoToClass <span class="detail">UI, UX <em>•</em> 2014</span></a>
-      </li> -->
-      <li>
-        <a href="theco.html"><div class="circle-sm green"></div> The Co. <span class="detail">Identity, UI <em>•</em> 2014</span></a>
-      </li>
-      <!-- <li>
-        <a href="#"><div class="circle-sm brown"></div> Scarlett of Soho <span class="detail">Identity, Packaging, UI, UX <em>•</em> 2013</span>
-        </a>
-      </li>
-      <li>
-        <a href="#"><div class="circle-sm purple"></div> Supahands <span class="detail">Identity, UI, UX, Front-end <em>•</em> 2013</span></a>
-      </li> -->
-      <li>
-        <a href="cimb.html"><div class="circle-sm red"></div> CIMB Classic <span class="detail">UI <em>•</em> 2013</span></a>
-      </li>
-    </ul>
-  </div>
-  <hr />
   <div class="footer">
-    <p class="caption">©2017</p>
-    <p class="caption"><a href="mailto:&#122;&#097;&#107;&#105;&#051;&#100;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">Contact</a></p>
+    <p class="caption">©<span id="copyright-year">2017</span></p>
   </div>
 </div>
+<script src="assets/scripts/copyright.js"></script>
+<script>
+(function () {
+  // Contact links are assembled at runtime (Caesar-shifted char codes) so
+  // plain-text scrapers reading the static HTML never see a harvestable
+  // email address or handle. Falls back to the entity-encoded <noscript>
+  // links above when JS is unavailable.
+  function decode(codes, key) {
+    return codes.map(function (c) { return String.fromCharCode(c - key); }).join('');
+  }
+  var KEY = 7;
+  var EMAIL_CODES = [129,104,114,112,58,107,71,110,116,104,112,115,53,106,118,116];
+  var IG_CODES = [111,123,123,119,122,65,54,54,112,117,122,123,104,110,121,104,116,53,106,118,116,54,129,104,114,112,58,107];
+
+  var emailLink = document.getElementById('contact-email');
+  var igLink = document.getElementById('contact-instagram');
+
+  if (emailLink) emailLink.setAttribute('href', 'mailto:' + decode(EMAIL_CODES, KEY));
+  if (igLink) igLink.setAttribute('href', decode(IG_CODES, KEY));
+})();
+</script>
 </body>
 </html>

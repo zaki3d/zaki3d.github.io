@@ -1,12 +1,35 @@
+:root {
+  color-scheme: light dark;
+  --bg: #FFFFFF;
+  --text: #1d1d1d;
+  --muted: #ABA197;
+  --divider: #FCFAF8;
+  --hover-bg: #F6F3F0;
+  --aside-bg: #fcfaf8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #EDEBE8;
+    --muted: #928C84;
+    --divider: #2A2A2A;
+    --hover-bg: #232323;
+    --aside-bg: #1A1A1A;
+  }
+}
+
 body {
   padding: 0;
   margin: 0;
   font-family: 'Rubik', sans-serif;
   font-size: 18px;
   line-height: 1.8em;
-  color: #1d1d1d;
+  background: var(--bg);
+  color: var(--text);
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 /* Structural */
@@ -49,7 +72,7 @@ body {
 }
 .breadcrumb {
   font-size: 16px;
-  color: #ABA197;
+  color: var(--muted);
   letter-spacing: 0;
   line-height: 14px;
   display: flex;
@@ -57,7 +80,7 @@ body {
   margin-bottom: 14px;
 }
 .breadcrumb a {
-  color: #ABA197;
+  color: var(--muted);
 }
 .footer {
   display: flex;
@@ -107,8 +130,8 @@ body {
 /* Visual elements */
 hr {
     height: 3px;
-    color: #FCFAF8;
-    background: #FCFAF8;
+    color: var(--divider);
+    background: var(--divider);
     font-size: 0;
     border: 0;
     margin: 30px 0;
@@ -171,27 +194,27 @@ h1 {
 }
 h2 {
   font-size: 18px;
-  color: #ABA197;
+  color: var(--muted);
   letter-spacing: 0;
   font-weight: normal;
 }
 a {
-  color: #1d1d1d;
+  color: var(--text);
   text-decoration: none;
-  border-bottom: 2px solid #F6F3F0;
+  border-bottom: 2px solid var(--hover-bg);
   padding:
 }
 a:hover {
   text-decoration: none;
   border-bottom: none;
-  background: #F6F3F0;
+  background: var(--hover-bg);
   border-radius: 4px;
   padding: 0 4px;
   margin: 0 -4px;
 }
 .caption {
   font-style: italic;
-  color: #ABA197;
+  color: var(--muted);
   font-size: 14px;
   text-align: center;
   line-height: 1.8em;
@@ -202,7 +225,7 @@ a:hover {
 }
 .detail {
   font-size: 16px;
-  color: #ABA197;
+  color: var(--muted);
   letter-spacing: 0;
   line-height: 24px;
   margin-left: 6px;
@@ -220,9 +243,23 @@ em {
   line-height: 1.5em;
 }
 .aside {
-  background: #fcfaf8;
+  background: var(--aside-bg);
   padding: 10px 30px;
   border-radius: 8px;
+}
+
+/* Contact */
+.contact-list {
+  margin: 0;
+}
+.contact-list li {
+  margin-bottom: 10px;
+}
+.contact-list li:last-child {
+  margin-bottom: 0;
+}
+.contact-list a {
+  color: var(--muted);
 }
 
 /* Emoji override */
