@@ -184,6 +184,9 @@ a {
   .hero-header {
     grid-template-columns: 1fr;
   }
+  .hero-header {
+    gap: 12px;
+  }
   .hero-content,
   .hero-image,
   .name,
