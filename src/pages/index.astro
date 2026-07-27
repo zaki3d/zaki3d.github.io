@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import profilePhoto from '../assets/profile-2026.jpg';
+---
+
+<BaseLayout title="Zaki Salleh - Principal Designer" showDividers>
+  <header class="hero-header" slot="header">
+    <p class="name">Hi, I'm Zaki</p>
+    <div class="status">
+      <p class="location">Currently in <span class="location-place">Sydney, AU</span></p>
+      <div class="weather" data-lat="-33.8688" data-lon="151.2093" data-tz="Australia/Sydney">
+        <svg class="weather-icon" width="16" height="16" viewBox="0 0 13.3333 13.3333" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6.66667 0.666667V1.33333M6.66667 12V12.6667M0.666667 6.66667H1.33333M12 6.66667H12.6667M10.9093 2.42415L10.438 2.89549M2.89532 10.4382L2.42399 10.9095M2.42399 2.42415L2.89532 2.89549M10.438 10.4382L10.9093 10.9095M9.33333 6.66667C9.33333 8.13943 8.13943 9.33333 6.66667 9.33333C5.19391 9.33333 4 8.13943 4 6.66667C4 5.19391 5.19391 4 6.66667 4C8.13943 4 9.33333 5.19391 9.33333 6.66667Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="weather-temp">18º</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero-row">
+    <div class="hero-content">
+      <p>I'm a Principal Designer at <a href="http://atlassian.com" target="_blank" rel="noopener">Atlassian</a> where I design tools for developers and customer support teams.</p>
+      <p>With more than a decade experience, I've lead product teams across a broad set of work, from launching 0→1 products, building and scaling features and ideas, to uplevelling crafts in teams.</p>
+      <p>Outside of work, I'm a husband and a father of two, and a novice runner and boulderer.</p>
+      <p>You can connect with me on <a href="https://instagram.com/zaki3d" target="_blank" rel="noopener">Instagram</a>, <a href="https://www.linkedin.com/in/zaki3d" target="_blank" rel="noopener">LinkedIn</a> or <a href="mailto:&#122;&#097;&#107;&#105;&#051;&#100;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" rel="nofollow noopener">email</a>.</p>
+    </div>
+    <div class="hero-image">
+      <div class="frame">
+        <Image src={profilePhoto} alt="Zaki Salleh" />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    align-items: center;
+    padding: 16px 0;
+  }
+  .name {
+    grid-column: span 8;
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--heading);
+  }
+  .status {
+    grid-column: span 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-family: 'Space Mono', monospace;
+    font-style: italic;
+    font-size: 16px;
+  }
+  .location {
+    margin: 0;
+    color: var(--muted);
+  }
+  .location-place {
+    color: var(--ink);
+  }
+  .weather {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--ink);
+  }
+  .weather-icon {
+    display: block;
+    color: var(--ink);
+  }
+
+  .hero-row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    align-items: stretch;
+  }
+  .hero-content {
+    grid-column: span 8;
+    min-width: 0;
+    padding: 32px 0;
+  }
+  .hero-content p {
+    margin: 0 0 24px;
+  }
+  .hero-content p:last-child {
+    margin-bottom: 0;
+  }
+  .hero-image {
+    grid-column: span 4;
+  }
+  .hero-image .frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--image-bg);
+    border-radius: 0;
+    overflow: hidden;
+  }
+  .hero-image .frame :global(img) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 22%;
+  }
+
+  @media (max-width: 720px) {
+    .hero-row,
+    .hero-header {
+      grid-template-columns: 1fr;
+    }
+    .hero-header {
+      gap: 12px;
+    }
+    .hero-content,
+    .hero-image,
+    .name,
+    .status {
+      grid-column: span 1;
+    }
+    .hero-image .frame {
+      height: auto;
+      aspect-ratio: 4 / 5;
+    }
+  }
+</style>
+
+<script>
+  const el = document.querySelector<HTMLElement>('.weather');
+  const temp = el?.querySelector<HTMLElement>('.weather-temp');
+
+  if (el && temp) {
+    const lat = el.getAttribute('data-lat');
+    const lon = el.getAttribute('data-lon');
+    const tz = el.getAttribute('data-tz');
+
+    if (lat && lon) {
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m&timezone=${encodeURIComponent(tz || 'auto')}`;
+
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          const value = data?.current?.temperature_2m;
+          if (typeof value === 'number') {
+            temp.textContent = `${Math.round(value)}º`;
+          }
+        })
+        .catch(() => {
+          // Leave the static fallback temperature in place.
+        });
+    }
+  }
+</script>

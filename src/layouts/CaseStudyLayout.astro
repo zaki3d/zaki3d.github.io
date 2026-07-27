@@ -1,0 +1,137 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  title: string;
+  date: string;
+  description: string;
+  tags?: string[];
+  heroImage?: ImageMetadata;
+  dotColor?: 'red' | 'green' | 'blue';
+  prev?: { href: string; title: string };
+  next?: { href: string; title: string };
+}
+
+const { title, date, description, tags, heroImage, dotColor, prev, next } = Astro.props;
+
+const detail = [date, tags && tags.length > 0 ? tags.join(', ') : null]
+  .filter(Boolean)
+  .join(' • ');
+---
+
+<BaseLayout title={`${title} — Zaki Salleh`} description={description}>
+  <div slot="header">
+    <SiteNav sectionLabel="Case Studies" sectionHref="/case-studies/" />
+  </div>
+
+  <article class="case-study">
+    <header class="case-study-header">
+      <h1>
+        {title}
+        {dotColor && <span class={`dot dot--${dotColor}`} aria-hidden="true"></span>}
+      </h1>
+      {detail && <p class="detail">{detail}</p>}
+    </header>
+
+    {heroImage && (
+      <div class="hero-media">
+        <Image src={heroImage} alt="" />
+      </div>
+    )}
+
+    <div class="prose">
+      <slot />
+    </div>
+
+    {(prev || next) && (
+      <nav class="case-study-nav">
+        <div class="nav-prev">
+          {prev && <a href={prev.href}>← {prev.title}</a>}
+        </div>
+        <div class="nav-next">
+          {next && <a href={next.href}>{next.title} →</a>}
+        </div>
+      </nav>
+    )}
+  </article>
+</BaseLayout>
+
+<style>
+  .case-study {
+    padding: 32px 0;
+  }
+  .hero-media {
+    margin: 0 0 32px;
+  }
+  .hero-media :global(img) {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .case-study-header h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--heading);
+    margin: 0 0 8px;
+  }
+  .dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    flex: none;
+  }
+  .dot--red { background: #DE1E33; }
+  .dot--green { background: #95BF16; }
+  .dot--blue { background: #0057D8; }
+  .detail {
+    font-family: 'Space Mono', monospace;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0 0 32px;
+  }
+  .prose :global(p) {
+    margin: 0 0 24px;
+  }
+  .prose :global(img) {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 0 24px;
+  }
+  .prose :global(h2) {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    color: var(--heading);
+    font-size: 22px;
+  }
+  .prose :global(blockquote) {
+    margin: 0 0 32px;
+    padding: 0;
+    border: none;
+    font-size: 28px;
+    line-height: 1.5em;
+    color: var(--ink);
+  }
+  .prose :global(blockquote p) {
+    margin: 0;
+  }
+  .case-study-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px dashed var(--line);
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+interface Props {
+  sectionLabel: string;
+  sectionHref: string;
+}
+
+const { sectionLabel, sectionHref } = Astro.props;
+---
+
+<nav class="site-nav">
+  <a href="/">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href={sectionHref}>{sectionLabel}</a>
+</nav>
+
+<style>
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    color: var(--muted);
+  }
+  .site-nav a {
+    color: var(--muted);
+    text-decoration: underline;
+  }
+</style>

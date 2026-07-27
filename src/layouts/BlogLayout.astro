@@ -1,0 +1,106 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  title: string;
+  date: Date;
+  description: string;
+  tags?: string[];
+  heroImage?: ImageMetadata;
+}
+
+const { title, date, description, tags, heroImage } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('en-AU', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={`${title} — Zaki Salleh`} description={description}>
+  <div slot="header">
+    <SiteNav sectionLabel="Blog" sectionHref="/blog/" />
+  </div>
+
+  <article class="post">
+    {heroImage && (
+      <div class="hero-media">
+        <Image src={heroImage} alt="" />
+      </div>
+    )}
+
+    <header class="post-header">
+      <h1>{title}</h1>
+      <p class="meta">
+        <time datetime={date.toISOString()}>{formattedDate}</time>
+        {tags && tags.length > 0 && (
+          <span class="tags">
+            {tags.map((tag) => <span class="tag">{tag}</span>)}
+          </span>
+        )}
+      </p>
+    </header>
+
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .post {
+    padding: 32px 0;
+  }
+  .hero-media {
+    margin: 0 0 32px;
+  }
+  .hero-media :global(img) {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .post-header h1 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--heading);
+    margin: 0 0 8px;
+  }
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-family: 'Space Mono', monospace;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0 0 32px;
+  }
+  .tags {
+    display: flex;
+    gap: 8px;
+  }
+  .tag::before {
+    content: '#';
+  }
+  .prose :global(p) {
+    margin: 0 0 24px;
+  }
+  .prose :global(img) {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 0 24px;
+  }
+  .prose :global(h2) {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    color: var(--heading);
+    font-size: 22px;
+  }
+</style>

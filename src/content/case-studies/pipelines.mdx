@@ -1,0 +1,67 @@
+---
+title: Bitbucket Pipelines
+date: "2015-17"
+description: Designing Bitbucket Pipelines, a continuous delivery tool for developer teams, from early onboarding experiments to broader roadmap work.
+tags: ["Research", "UI", "UX"]
+heroImage: ../../assets/case-studies/pipelines/pipelines-latest.jpg
+order: 3
+---
+
+import Figure from '../../components/Figure.astro';
+import Callout from '../../components/Callout.astro';
+import VideoEmbed from '../../components/VideoEmbed.astro';
+import pipelinesOnboard2 from '../../assets/case-studies/pipelines/pipelines-onboard-2.jpg';
+import pipelinesOnboard3 from '../../assets/case-studies/pipelines/pipelines-onboard-3.jpg';
+import pipelinesOnboard4 from '../../assets/case-studies/pipelines/pipelines-onboard-4.jpg';
+import pipelinesOnboard5 from '../../assets/case-studies/pipelines/pipelines-onboard-5.jpg';
+import pipelinesResultCompare from '../../assets/case-studies/pipelines/pipelines-result-compare.jpg';
+import pipelinesFutureSprint from '../../assets/case-studies/pipelines/pipelines-future-sprint.jpg';
+import pipelinesFutureTest from '../../assets/case-studies/pipelines/pipelines-future-test.jpg';
+
+> Pipelines is a Bitbucket feature for development teams to continuously build, test and deploy their code.
+
+Pipelines help small to medium-sized teams easily set up and maintain a Continuous Delivery workflow for their projects without having to worry about the build infrastructure. In this project, I worked with the PM, engineers, and designers to envision, deliver and iteratively improve on the product.
+
+<Callout>
+
+## The birth of Pipelines
+
+In late 2015, the Bamboo Cloud (now defunct) team pivoted to building what they believed was a better way forward — Bitbucket Pipelines. If you're familiar with Bamboo, you'd know how powerful and feature-packed it was as a build tool, but this came with a baggage. Setting up a build in Bamboo was complicated and hard to maintain. Teams were required to sign up for a different service to run their build, and this added unnecessary overhead for most cloud teams.
+
+Pipelines simplified that by using services like Docker as their build infrastructure, and storing your build configuration in a .yml file, which is committed and versioned with your code in your repository.
+
+</Callout>
+
+## Continuous improvements
+
+When Pipelines was launched in mid-2016, we were missing a lot of the tablestakes features that [other](https://wercker.com) [build](https://codeship.com) [tools](http://www.circleci.com) had at the time. In order to win users over, it was critical that users can easily set up a pipeline, or migrate their existing setup from other tools. Thus, user onboarding became an important journey for us early on.
+
+<Figure src={pipelinesOnboard2} caption="Early version of Pipelines' (previously 'Builds') onboarding was simple but confusing." />
+
+As a designer, I worked closely with the PMs and Front-end Engineers on the design of our onboarding funnel. Each design gets hardened through sparring, and validated through A/B tests. We use analytics, in-product survey and tools like [Usertesting.com](http://usertesting.com) to gather quantitative and qualitative data about each design, and inform our next iterations. With better understanding of our funnel, we were able to improve the design within a quarter, ultimately increasing the conversion from ~6% to ~15% — an increase of more than 200%!
+
+<Figure src={pipelinesOnboard3} caption="One of the onboarding experiment where build results are analysed, and a fix is recommended based on the error." />
+
+<Figure src={pipelinesOnboard4} caption="We used in-product survey to gather qualitative feedback and improve our funnel." />
+
+<VideoEmbed src="https://www.youtube.com/embed/dVo0j6NbTkE" title="Pipelines onboarding prototype" caption="An onboarding prototype done during ShipIt (Atlassian's quarterly hackathon), exploring a 1-click setup idea." />
+
+<Figure src={pipelinesOnboard5} caption="The winning candidate — significantly improved onboarding was achieved when we understood users' concern around pricing, supported languages and the setup complexity." />
+
+## Checking off tablestakes
+
+After the beta launch, we were shipping features in 2 to 4 weeks cycles, in order to reach feature parity with our competitors. The features were usually specced out by the PMs, and kicked-off with Design and Engineering where we defined the goal and scope of each feature.
+
+<Figure src={pipelinesResultCompare} caption="Evolution of Pipelines — from just a simple build log, to supporting end-to-end CD workflow with features like multiple steps and services, step duration, and test reporting." />
+
+Some features were tablestakes, and required little validation while others may go through testing similar to the aforementioned methods to gain confidence before shipping. Some features were shipped with known compromise in order to deliver customer value, and iterated later on.
+
+## Onward and upward
+
+Once we've shipped most of the tablestakes features, we were able to start looking into the next 6-12 months work. With the combined effort of a researcher, an additional designer and a PM, we begun a month-long research into our users' development workflow. We ran contextual enquiries and design sprints to explore our opportunities, narrow down our direction, and solidify our roadmap. We prototyped designs, and validated them through interviews and online testing and before agreeing on a direction and eventually breaking them down into stories for the engineers to work on.
+
+<Figure src={pipelinesFutureSprint} caption="Design, PM and Engineering get together in the design sprint to discuss problems and potential ideas." />
+
+<Figure src={pipelinesFutureTest} caption="Ideas were prototyped and tested with remote users before getting implemented." />
+
+Today, Pipelines has grown to become one of the most used features in Bitbucket (amongst paid teams), and continue to grow in features to support modern software teams in their journey to build, test, and deliver quality code as efficiently as possible.

@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  showDividers?: boolean;
+}
+
+const { title, description, showDividers = false } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta charset="UTF-8">
+</head>
+<body>
+<div class="page">
+  <span class="guide guide--left" aria-hidden="true"></span>
+  {showDividers && <span class="guide guide--mid" aria-hidden="true"></span>}
+  <span class="guide guide--right" aria-hidden="true"></span>
+
+  <div class="container">
+    <slot name="header" />
+    {showDividers && <hr class="hr-full">}
+    <slot />
+    {showDividers && <hr class="hr-full">}
+    <footer class="site-footer">
+      <p>©<span id="copyright-year">2026</span></p>
+    </footer>
+  </div>
+</div>
+<script>
+  const el = document.getElementById('copyright-year');
+  if (el) el.textContent = String(new Date().getFullYear());
+</script>
+</body>
+</html>

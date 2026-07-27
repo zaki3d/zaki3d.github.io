@@ -1,0 +1,110 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  title: string;
+  date: Date;
+  coverImage: ImageMetadata;
+  images: { src: ImageMetadata; caption?: string }[];
+  location?: string;
+}
+
+const { title, date, coverImage, images, location } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('en-AU', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={`${title} — Zaki Salleh`}>
+  <div slot="header">
+    <SiteNav sectionLabel="Gallery" sectionHref="/gallery/" />
+  </div>
+
+  <article class="gallery-entry">
+    <div class="cover">
+      <Image src={coverImage} alt="" />
+    </div>
+
+    <header class="gallery-header">
+      <h1>{title}</h1>
+      <p class="meta">
+        <time datetime={date.toISOString()}>{formattedDate}</time>
+        {location && <span class="location">{location}</span>}
+      </p>
+    </header>
+
+    <div class="prose">
+      <slot />
+    </div>
+
+    <div class="grid">
+      {images.map(({ src, caption }) => (
+        <figure class="grid-item">
+          <Image src={src} alt={caption ?? ''} />
+          {caption && <figcaption>{caption}</figcaption>}
+        </figure>
+      ))}
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .gallery-entry {
+    padding: 32px 0;
+  }
+  .cover {
+    margin: 0 0 32px;
+  }
+  .cover :global(img) {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .gallery-header h1 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--heading);
+    margin: 0 0 8px;
+  }
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-family: 'Space Mono', monospace;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0 0 32px;
+  }
+  .prose :global(p) {
+    margin: 0 0 24px;
+    max-width: 720px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+  }
+  .grid-item {
+    margin: 0;
+  }
+  .grid-item :global(img) {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .grid-item figcaption {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 8px;
+  }
+</style>

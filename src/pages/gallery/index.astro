@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteNav from '../../components/SiteNav.astro';
+
+const entries = (await getCollection('gallery')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout title="Gallery — Zaki Salleh">
+  <div slot="header">
+    <SiteNav sectionLabel="Gallery" sectionHref="/gallery/" />
+  </div>
+
+  <div class="listing">
+    <h1>Gallery</h1>
+    {entries.length === 0 && <p class="empty">No gallery entries yet — check back soon.</p>}
+    <ul>
+      {entries.map((entry) => (
+        <li>
+          <a href={`/gallery/${entry.id}/`}>{entry.data.title}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>
+
+<style>
+  .listing {
+    padding: 32px 0;
+  }
+  .listing h1 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--heading);
+    margin: 0 0 24px;
+  }
+  .empty {
+    font-style: italic;
+    color: var(--muted);
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    margin-bottom: 16px;
+  }
+</style>

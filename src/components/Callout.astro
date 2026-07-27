@@ -1,0 +1,18 @@
+---
+---
+
+<aside class="callout">
+  <slot />
+</aside>
+
+<style>
+  .callout {
+    background: var(--image-bg);
+    border-radius: 8px;
+    padding: 24px 32px;
+    margin: 0 0 32px;
+  }
+  .callout :global(p:last-child) {
+    margin-bottom: 0;
+  }
+</style>
